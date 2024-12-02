@@ -21,9 +21,12 @@ right_list.sort()
 
 distance = 0
 i = 0
-while i < len(left_list):
-    distance += abs(left_list[i] - right_list[i])
-    i += 1
 
-print(distance)
+# This method is slow, but I think it'd be fun to only use no imports where possible.
+# Using a Counter would be faster.
 
+similarity = 0
+for item in left_list:
+    similarity += item * right_list.count(item)
+
+print(similarity)
